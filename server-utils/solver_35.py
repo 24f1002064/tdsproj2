@@ -2,7 +2,6 @@
 # requires-python = "==3.12"
 # dependencies = [
 #   "chromadb==0.4.15",
-#   "sentence-transformers",
 #   "fastapi",
 #   "uvicorn",
 #   "pydantic",
