@@ -15,26 +15,19 @@ from bs4 import BeautifulSoup
 import pytz
 
 from pathlib import Path
-from PIL import Image
 import io
 import base64
 from string import Template
 import requests
 import colorsys
 import numpy as np
-
-from pydub import AudioSegment
-import google.generativeai as genai
 import jellyfish
 from collections import defaultdict
 import gzip
 from unidecode import unidecode
 
-import fitz  # PyMuPDF
 from markdownify import markdownify as md
 
-
-import tabula
 from urllib.parse import urlencode
 
 

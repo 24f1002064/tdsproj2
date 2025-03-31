@@ -1,26 +1,3 @@
-# /// script
-# requires-python = ">=3.13"
-# dependencies = [
-#     "fastapi",
-#     "uvicorn",
-#     "requests",
-#     "prettier",
-#     "Pillow",
-#     "numpy",
-#     "openai",
-#     "python-dateutil",
-#     "faker",
-#     "httpx",
-#     "aiohttp",
-#     "gitpython",          # For Git operations (B4)
-#     "beautifulsoup4",     # For web scraping (B6)
-#     "pytesseract",        # For OCR (A8, if needed)
-#     "SpeechRecognition",  # For audio transcription (B8)
-#     "markdown",           # For Markdown to HTML conversion (B9)            # For CSV processing (B10)
-#     "duckdb",             # For DuckDB database operations (B5, optional)
-# ]
-# ///
-
 # Core and FastAPI
 from typing import Annotated
 from fastapi import FastAPI, Form, HTTPException
@@ -52,19 +29,13 @@ from bs4 import BeautifulSoup  # For web scraping
 
 # Image processing
 from PIL import Image  # For image manipulation
-import pytesseract  # For OCR (optional)
 
-# Audio processing
-import speech_recognition as sr  # For audio transcription
 
 # Markdown processing
 import markdown  # For Markdown to HTML conversion
 
 # Git operations
 from git import Repo  # For cloning and committing to Git repositories
-
-# OpenAI and AI Proxy
-import openai  # For OpenAI API (if needed)
 
 app = FastAPI()
 
