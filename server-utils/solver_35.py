@@ -49,8 +49,6 @@ def custom_openai_embedding_function(texts):
 from fastapi import FastAPI
 import uvicorn
 import chromadb
-from chromadb.utils import embedding_functions
-from sentence_transformers import SentenceTransformer
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
@@ -113,5 +111,4 @@ async def main(item: Item):
 
 
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
