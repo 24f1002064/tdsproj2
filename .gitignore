@@ -1,0 +1,5 @@
+.tds_env
+__pycache__
+.imp_shell
+
+venv
