@@ -1,7 +1,41 @@
 import os
 import httpx
 import tempfile
+import subprocess
+import json
+import datetime
+import zipfile
+import csv
+import hashlib
+import shlex
+import pandas as pd
+import re
 
+from bs4 import BeautifulSoup
+import pytz
+
+from pathlib import Path
+from PIL import Image
+import io
+import base64
+from string import Template
+import requests
+import colorsys
+import numpy as np
+
+from pydub import AudioSegment
+import google.generativeai as genai
+import jellyfish
+from collections import defaultdict
+import gzip
+from unidecode import unidecode
+
+import fitz  # PyMuPDF
+from markdownify import markdownify as md
+
+
+import tabula
+from urllib.parse import urlencode
 
 
 def solver_1(command: str):
@@ -43,8 +77,6 @@ CPU %	Mem MB	   PID	Process
 
 
 def solver_2(url: str, param: str, value: str):
-    import subprocess
-    import json
 
     # Run the command using uv run with httpie
     cmd = ["uv", "run", "--with", "httpie", "--", "https", f"{url}", f"{param}=={value}"]
@@ -55,9 +87,6 @@ def solver_2(url: str, param: str, value: str):
 
 
 def solver_3(req_filename: str, temp_dir: str, file_path: str, file_name: str, command: str):
-    import subprocess
-    import json
-    import os
     PWD = os.getcwd()
     
 
@@ -97,10 +126,7 @@ def solver_3(req_filename: str, temp_dir: str, file_path: str, file_name: str, c
     return f'''{output[:-4]}'''
 
 def solver_4(formula: str):
-    import os
-    import httpx
-    import tempfile
-    import subprocess
+
     try:
         api_key = os.getenv('AIPROXY_TOKEN')
         response = httpx.post("http://aiproxy.sanand.workers.dev/openai/v1/chat/completions",
@@ -136,10 +162,7 @@ def solver_4(formula: str):
         return {"message": "task execution failed", "status_code": 500}
     
 def solver_5(formula: str):
-    import os
-    import httpx
-    import tempfile
-    import subprocess
+
     try:
         api_key = os.getenv('AIPROXY_TOKEN')
         response = httpx.post("http://aiproxy.sanand.workers.dev/openai/v1/chat/completions",
@@ -199,7 +222,7 @@ def solver_6(html_element: str):
 
 
 def solver_7(day_name: str, start_date: str, end_date: str):
-    import datetime
+
     start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
     end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d")
     day_count = 0
@@ -212,8 +235,7 @@ def solver_7(day_name: str, start_date: str, end_date: str):
 
 def solver_8(temp_dir: str, file_path: str, file_name: str, csv_file: str, column_name: str):
     # Unzip the file
-    import zipfile
-    import csv
+    
     with zipfile.ZipFile(file_path, 'r') as zip_ref:
         zip_ref.extractall(temp_dir)
 
@@ -229,7 +251,7 @@ def solver_8(temp_dir: str, file_path: str, file_name: str, csv_file: str, colum
 
 
 def solver_9(json_array: list, first_field: str, second_field: str):
-    import json
+
     json_array = json.loads(json_array)
     for i in range(len(json_array)):
         for j in range(len(json_array)):
@@ -242,10 +264,7 @@ def solver_9(json_array: list, first_field: str, second_field: str):
     return f'''{json.dumps(json_array, separators=(',', ':'))}'''
 
 def solver_10(temp_dir: str, file_path: str, file_name: str):
-    import json
-    import hashlib
-    import subprocess
-    import shlex
+
     # Dictionary to store key-value pairs
     key_value_pairs = {}
     
@@ -275,8 +294,6 @@ def solver_10(temp_dir: str, file_path: str, file_name: str):
 
 
 def solver_11(html_element: str, given_class: str, given_attribute: str, hidden_html: str):
-    from bs4 import BeautifulSoup
-
     # Parse the HTML
     soup = BeautifulSoup(hidden_html, 'html.parser')
 
@@ -293,8 +310,7 @@ def solver_11(html_element: str, given_class: str, given_attribute: str, hidden_
 
 
 def solver_12(temp_dir: str, file_path: str, file_name: str, file_1: str, encoding_1: str, file_2: str, encoding_2: str, file_3: str, encoding_3: str, symbol_1: str, symbol_2: str, symbol_3: str):
-    import zipfile
-    import csv
+  
     with zipfile.ZipFile(file_path, 'r') as zip_ref:
         zip_ref.extractall(temp_dir)
     
@@ -311,7 +327,7 @@ def solver_12(temp_dir: str, file_path: str, file_name: str, file_1: str, encodi
         elif encodings[i] == 'UTF-16':
             encodings[i] = 'utf-16'
     
-    import pandas as pd
+
     df = pd.read_csv(file_1_path, encoding=encodings[0])
     filtered_df = df[(df.symbol == symbol_1) | (df.symbol == symbol_2) | (df.symbol == symbol_3) ]
 
@@ -360,12 +376,7 @@ def solver_13(file_name: str, value: str):
     return f"https://raw.githubusercontent.com/pradeepmondal/iitm_tds_assignments/refs/heads/main/email.json"
 
 def solver_14(temp_dir: str, file_path: str, file_name: str, existing_word: str, new_word: str, command: str):
-    import tempfile
-    import os
-    import subprocess
-    import zipfile
-    import shlex
-    import re
+
 
     new_temp = tempfile.mkdtemp()
     with zipfile.ZipFile(file_path, 'r') as zip_ref:
@@ -426,12 +437,8 @@ def solver_14(temp_dir: str, file_path: str, file_name: str, existing_word: str,
 
 
 def solver_15(temp_dir: str, file_path: str, file_name: str, file_size_number: str, date_string: str):
-    import os
-    from datetime import datetime
-    import pytz
-    import zipfile
-    import tempfile
 
+    from datetime import datetime
     new_temp = tempfile.mkdtemp()
     def extract_with_timestamps(zip_filename, extract_dir='.'):
         with zipfile.ZipFile(zip_filename, 'r') as zip_ref:
@@ -518,12 +525,7 @@ def solver_15(temp_dir: str, file_path: str, file_name: str, file_size_number: s
     return f'''{total_size}'''
 
 def solver_16(temp_dir: str, file_path: str, file_name: str, command: str):
-    import os
-    import re
-    import subprocess
-    import shlex
-    import tempfile
-    import zipfile
+
 
     new_temp = tempfile.mkdtemp()
     with zipfile.ZipFile(file_path, 'r') as zip_ref:
@@ -582,7 +584,7 @@ def solver_16(temp_dir: str, file_path: str, file_name: str, command: str):
     return f'''{stdout.decode('utf-8').strip()[:-3]}'''
 
 def solver_17(temp_dir: str, file_path: str, file_name: str, file_1: str, file_2: str):
-    import zipfile
+
     with zipfile.ZipFile(file_path, 'r') as zip_ref:
         zip_ref.extractall(temp_dir)
     
@@ -632,12 +634,7 @@ This is total steps
 >Total Steps'''
 
 def solver_20(temp_dir: str, file_path: str, file_name: str, quality: int = 10):
-    from pathlib import Path
-    from PIL import Image
-    import subprocess
-    import os
-    import io
-    import base64
+
 
     output_path = os.path.join(temp_dir, 'compressed.png')
 
@@ -706,16 +703,14 @@ def solver_21(email_id: str):
 
 
 def solver_22(email_id: str):
-    import hashlib
+
     hash_code = hashlib.sha256(f"{email_id} 2025".encode()).hexdigest()[-5:]
     return f'''{hash_code}'''
 
 
 def solver_23(temp_dir: str, file_path: str, file_name: str, lightness_threshold: float):
-    import numpy as np
-    from PIL import Image
 
-    import colorsys
+
 
     # There is a mistake in the line below. Fix it
     image = Image.open(file_path)
@@ -788,9 +783,7 @@ def solver_26(tag: str): #### Need to check later ####
     
 
 def solver_27(temp_dir: str, file_path: str, file_name: str):
-    import subprocess
-    import os
-    import requests
+
     PWD = os.getcwd()
     with open(file_path, 'r') as f:
         code = f.read()
@@ -808,7 +801,7 @@ def solver_28():
     return "https://5afc-223-185-60-63.ngrok-free.app/"
 
 def solver_29(meaningless_text: str, model_name: str):
-    from string import Template
+
     str_temp = Template('''import httpx
 
     response = httpx.post("https://api.openai.com/v1/chat/completions",
@@ -852,8 +845,6 @@ def solver_30(user_message: str):
     
 
 def solver_31(required_fields: list, additionalPropertiesBoolean: bool):
-    from string import Template
-    import json
     str_temp =Template('''
 {
   "model": "gpt-4o-mini",
@@ -907,8 +898,7 @@ def solver_31(required_fields: list, additionalPropertiesBoolean: bool):
     
 
 def solver_32(temp_dir: str, file_path: str, file_name: str):
-    import base64
-    from string import Template
+
 
     base64_image = base64.b64encode(open(file_path, "rb").read()).decode("utf-8")
     
@@ -932,7 +922,6 @@ def solver_32(temp_dir: str, file_path: str, file_name: str):
 
 
 def solver_33(verification_message_1: str, verification_message_2: str):
-    from string import Template
     str_temp = Template('''{"model": "text-embedding-3-small", "input": ["$verification_message_1", "$verification_message_2"]}''')
     return f'''{str_temp.substitute(verification_message_1=verification_message_1, verification_message_2=verification_message_2)}'''
 
@@ -962,9 +951,7 @@ def most_similar(embeddings):
     return (phrase1, phrase2)'''
 
 def solver_35():
-    import subprocess
-    import os
-    import requests
+
     PWD = os.getcwd()
     os.chdir('server-utils')
     subprocess.Popen(["nohup", "uvicorn", "solver_35:app", "--host", "0.0.0.0", "--port", "8000", "--reload"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -974,9 +961,7 @@ def solver_35():
     return(f"http://{public_ip}:8000/similarity")
 
 def solver_36():
-    import subprocess
-    import os
-    import requests
+
     PWD = os.getcwd()
     os.chdir('server-utils')
     subprocess.Popen(["nohup", "uvicorn", "solver_36:app", "--host", "0.0.0.0", "--port", "8001", "--reload"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -986,9 +971,7 @@ def solver_36():
     return(f"http://{public_ip}:8001/execute")
 
 def solver_37(page_number: str):
-    import httpx
-    from bs4 import BeautifulSoup
-    import pandas as pd
+
 
     def scrape_cricinfo_stats():
         url = f"https://stats.espncricinfo.com/stats/engine/stats/index.html?class=2;page={page_number};template=results;type=batting"
@@ -1060,10 +1043,7 @@ def solver_37(page_number: str):
     return f'''{total_ducks}'''
 
 def solver_38(ratings_start: str, ratings_end: str):
-    import httpx
-    from bs4 import BeautifulSoup
-    import json
-    import re
+
 
     def scrape_imdb_movies_with_rating_range():
         # URL for IMDb advanced search with rating between 7 and 8
@@ -1146,9 +1126,7 @@ def solver_38(ratings_start: str, ratings_end: str):
     return f'''{json.dumps(movies_data, indent=2)}'''
 
 def solver_39():
-    import subprocess
-    import os
-    import requests
+
     PWD = os.getcwd()
     os.chdir('server-utils')
     subprocess.Popen(["nohup", "uvicorn", "solver_39:app", "--host", "0.0.0.0", "--port", "8002", "--reload"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -1158,10 +1136,7 @@ def solver_39():
     return(f"http://{public_ip}:8002/scrape")
 
 def solver_40(required_city: str):
-    from bs4 import BeautifulSoup
-    import httpx
-    import json
-    from urllib.parse import urlencode
+
 
     def scrape(city: str):
         required_city = city
@@ -1203,7 +1178,6 @@ def solver_40(required_city: str):
     return scrape(required_city)
 
 def solver_41(maximum_or_minimum: str, city_name: str, country_name: str):
-    import requests
     from geopy.geocoders import Nominatim
     
     locator = Nominatim(user_agent="myGeocoder")
@@ -1221,9 +1195,7 @@ def solver_41(maximum_or_minimum: str, city_name: str, country_name: str):
     
 
 def solver_42(mentioning_word: str, minimum_points: int):
-    import httpx
-    from bs4 import BeautifulSoup
-    import re
+ 
 
     response = httpx.get(f"https://hnrss.org/newest?q={mentioning_word}")
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -1251,7 +1223,6 @@ def solver_42(mentioning_word: str, minimum_points: int):
     return f'''{urls[0]}'''
 
 def solver_43(city_name: str, followers_count: int):
-    import requests
     from datetime import datetime
 
 
@@ -1365,9 +1336,6 @@ def solver_44(email: str):
     return f'''https://github.com/pradeepmondal/tds-actions-test'''
 
 def solver_45(temp_dir: str, file_path: str, file_name: str, subject_whose_marks_to_be_calculated: str, marks_in_criterion_subject: int, criterion_subject: str, group_start_number: int, group_end_number: int):
-    import tabula
-    import pandas as pd
-    import os
 
     
     # Extract tables from the PDF file
@@ -1393,11 +1361,8 @@ def solver_45(temp_dir: str, file_path: str, file_name: str, subject_whose_marks
 
 
 def solver_46(temp_dir: str, file_path: str, file_name: str):
-    import fitz  # PyMuPDF
-    from markdownify import markdownify as md
-    from string import Template
-    import os
-    import subprocess
+
+
 
     def convert_pdf_to_markdown(pdf_path, markdown_path):
         doc = fitz.open(pdf_path)
@@ -1576,8 +1541,7 @@ def solver_49(temp_dir: str, file_path: str, file_name: str,
           status_min=200, 
           status_max=300):
     
-    import gzip
-    import re
+    
     from datetime import datetime
 
     
@@ -1662,10 +1626,8 @@ def solver_49(temp_dir: str, file_path: str, file_name: str,
     return f'''{count}'''
 
 def solver_50(temp_dir: str, file_path: str, file_name: str, section: str, date_string: str):
-    import gzip
-    import re
     from datetime import datetime
-    from collections import defaultdict
+
     
 
     target_date = date_string
@@ -1719,9 +1681,7 @@ def solver_50(temp_dir: str, file_path: str, file_name: str, section: str, date_
 
 
 def solver_51(temp_dir: str, file_path: str, file_name: str, product_sold: str, no_of_products_sold_atleast: int, city_name: str):
-    import pandas as pd
-    import jellyfish
-    from unidecode import unidecode
+
     
     target_product = product_sold
     min_sales = no_of_products_sold_atleast
@@ -1756,8 +1716,6 @@ def solver_51(temp_dir: str, file_path: str, file_name: str, product_sold: str, 
 
 
 def solver_52(temp_dir: str, file_path: str, file_name: str):
-    import re
-    import json
     total = 0
 
     def regex_sales_extraction(line: str) -> int:
@@ -1802,7 +1760,6 @@ def solver_52(temp_dir: str, file_path: str, file_name: str):
 
 
 def solver_53(temp_dir: str, file_path: str, file_name: str, target_key: str):
-    import json
     
     def count_key_occurrences(data) -> int:
         count = 0
@@ -1828,10 +1785,7 @@ def solver_54(date_time_string: str, no_of_useful_stars: int):
 
 
 def solver_55(start_time: float, end_time: float):
-    import os
-    from pydub import AudioSegment
-    import tempfile
-    import google.generativeai as genai
+
     api_key = os.getenv("GEMINI_API_KEY")
     genai.configure(api_key=api_key)
     from google.generativeai import GenerativeModel
@@ -1884,10 +1838,8 @@ def solver_55(start_time: float, end_time: float):
 
 
 def solver_56(temp_dir: str, file_path: str, file_name: str, file_path_2: str, file_name_2: str):
-    import base64
-    import os
-    from PIL import Image
-    import json
+
+    
 
     with open(file_path_2, 'r') as f:
         table_data = f.read()
