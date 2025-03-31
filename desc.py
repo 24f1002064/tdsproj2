@@ -9,18 +9,15 @@ solvers_descriptions = {
                 "properties": {
                     "command": {
                         "type": "string",
-                        "description": "the command whose output is required"
+                        "description": "the command whose output is required",
                     },
-                    
-
                 },
                 "required": ["command"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     2: {
         "type": "function",
         "function": {
@@ -31,26 +28,23 @@ solvers_descriptions = {
                 "properties": {
                     "url": {
                         "type": "string",
-                        "description": "the URL to send the request to"
+                        "description": "the URL to send the request to",
                     },
                     "param": {
                         "type": "string",
-                        "description": "the URL encoded parameter"
+                        "description": "the URL encoded parameter",
                     },
                     "value": {
                         "type": "string",
-                        "description": "the value set to the parameter"
-                    }
-                    
-
+                        "description": "the value set to the parameter",
+                    },
                 },
                 "required": ["url", "param", "value"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     3: {
         "type": "function",
         "function": {
@@ -61,22 +55,19 @@ solvers_descriptions = {
                 "properties": {
                     "req_filename": {
                         "type": "string",
-                        "description": "the name that the file should be renamed to"
+                        "description": "the name that the file should be renamed to",
                     },
                     "command": {
                         "type": "string",
-                        "description": "the command whose output is required"
+                        "description": "the command whose output is required",
                     },
-                    
-
                 },
                 "required": ["req_filename", "command"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     4: {
         "type": "function",
         "function": {
@@ -87,18 +78,15 @@ solvers_descriptions = {
                 "properties": {
                     "formula": {
                         "type": "string",
-                        "description": "the Google Sheets formula"
+                        "description": "the Google Sheets formula",
                     },
-                    
-
                 },
                 "required": ["formula"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     5: {
         "type": "function",
         "function": {
@@ -109,18 +97,15 @@ solvers_descriptions = {
                 "properties": {
                     "formula": {
                         "type": "string",
-                        "description": "the Microsoft Excel formula"
+                        "description": "the Microsoft Excel formula",
                     },
-                    
-
                 },
                 "required": ["formula"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     6: {
         "type": "function",
         "function": {
@@ -131,18 +116,15 @@ solvers_descriptions = {
                 "properties": {
                     "html_element": {
                         "type": "string",
-                        "description": "the HTML element"
+                        "description": "the HTML element",
                     },
-                    
-
                 },
                 "required": ["html_element"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     7: {
         "type": "function",
         "function": {
@@ -151,28 +133,16 @@ solvers_descriptions = {
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "day_name": {
-                        "type": "string",
-                        "description": "the day name"
-                    },
-                    "start_date": {
-                        "type": "string",
-                        "description": "the start date"
-                    },
-                    "end_date": {
-                        "type": "string",
-                        "description": "the end date"
-                    }
-                    
-
+                    "day_name": {"type": "string", "description": "the day name"},
+                    "start_date": {"type": "string", "description": "the start date"},
+                    "end_date": {"type": "string", "description": "the end date"},
                 },
                 "required": ["day_name", "start_date", "end_date"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-    }
+            "strict": True,
+        },
     },
-
     8: {
         "type": "function",
         "function": {
@@ -183,22 +153,19 @@ solvers_descriptions = {
                 "properties": {
                     "csv_file": {
                         "type": "string",
-                        "description": "the name of the CSV file"
+                        "description": "the name of the CSV file",
                     },
-
                     "column_name": {
                         "type": "string",
-                        "description": "the name of the column"
-                    }             
-
+                        "description": "the name of the column",
+                    },
                 },
                 "required": ["csv_file", "column_name"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     9: {
         "type": "function",
         "function": {
@@ -209,26 +176,23 @@ solvers_descriptions = {
                 "properties": {
                     "json_array": {
                         "type": "string",
-                        "description": "the JSON array of objects"
+                        "description": "the JSON array of objects",
                     },
                     "first_field": {
                         "type": "string",
-                        "description": "the first field for sorting"
+                        "description": "the first field for sorting",
                     },
                     "second_field": {
                         "type": "string",
-                        "description": "the second field for sorting"
-                    }
-                    
-
+                        "description": "the second field for sorting",
+                    },
                 },
                 "required": ["json_array", "first_field", "second_field"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     10: {
         "type": "function",
         "function": {
@@ -236,17 +200,13 @@ solvers_descriptions = {
             "description": "Converts a multi-cursor text into a single JSON object",
             "parameters": {
                 "type": "object",
-                "properties": {
-                    
-
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     11: {
         "type": "function",
         "function": {
@@ -257,30 +217,29 @@ solvers_descriptions = {
                 "properties": {
                     "html_element": {
                         "type": "string",
-                        "description": "the HTML element"
+                        "description": "the HTML element",
                     },
-                    "given_class": {
-                        "type": "string",
-                        "description": "the class name"
-                    },
+                    "given_class": {"type": "string", "description": "the class name"},
                     "given_attribute": {
                         "type": "string",
-                        "description": "the attribute name"
+                        "description": "the attribute name",
                     },
                     "hidden_html": {
                         "type": "string",
-                        "description": "it is termed as the hidden HTML but this is the html that is passed along with the prompt"
-                    }
-                    
-
+                        "description": "it is termed as the hidden HTML but this is the html that is passed along with the prompt",
+                    },
                 },
-                "required": ["html_element", "given_class", "given_attribute", "hidden_html"],
-                "additionalProperties": False
+                "required": [
+                    "html_element",
+                    "given_class",
+                    "given_attribute",
+                    "hidden_html",
+                ],
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     12: {
         "type": "function",
         "function": {
@@ -291,50 +250,57 @@ solvers_descriptions = {
                 "properties": {
                     "symbol_1": {
                         "type": "string",
-                        "description": "It is the first symbol to match. It would be between the word matches and the first OR like matches {symbol_1} OR. Make sure not to include the 'OR' word"
+                        "description": "It is the first symbol to match. It would be between the word matches and the first OR like matches {symbol_1} OR. Make sure not to include the 'OR' word",
                     },
                     "symbol_2": {
                         "type": "string",
-                        "description": "the second symbol to match, it will be after the first OR and before the second OR. It would not include the 'OR' word"
+                        "description": "the second symbol to match, it will be after the first OR and before the second OR. It would not include the 'OR' word",
                     },
                     "symbol_3": {
                         "type": "string",
-                        "description": "the third symbol to match, it will be just after the second OR. It would not include the 'OR' word"
+                        "description": "the third symbol to match, it will be just after the second OR. It would not include the 'OR' word",
                     },
                     "file_1": {
                         "type": "string",
-                        "description": "the name of the first file"
+                        "description": "the name of the first file",
                     },
                     "encoding_1": {
                         "type": "string",
-                        "description": "the encoding of the first file"
+                        "description": "the encoding of the first file",
                     },
                     "file_2": {
                         "type": "string",
-                        "description": "the name of the second file"
+                        "description": "the name of the second file",
                     },
                     "encoding_2": {
                         "type": "string",
-                        "description": "the encoding of the second file"
+                        "description": "the encoding of the second file",
                     },
                     "file_3": {
                         "type": "string",
-                        "description": "the name of the third file"
+                        "description": "the name of the third file",
                     },
                     "encoding_3": {
                         "type": "string",
-                        "description": "the encoding of the third file"
-                    }
-                    
-
+                        "description": "the encoding of the third file",
+                    },
                 },
-                "required": ["symbol_1", "symbol_2", "symbol_3", "file_1", "encoding_1", "file_2", "encoding_2", "file_3", "encoding_3"],
-                "additionalProperties": False
+                "required": [
+                    "symbol_1",
+                    "symbol_2",
+                    "symbol_3",
+                    "file_1",
+                    "encoding_1",
+                    "file_2",
+                    "encoding_2",
+                    "file_3",
+                    "encoding_3",
+                ],
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     13: {
         "type": "function",
         "function": {
@@ -345,22 +311,19 @@ solvers_descriptions = {
                 "properties": {
                     "file_name": {
                         "type": "string",
-                        "description": "the name of the file"
+                        "description": "the name of the file",
                     },
                     "value": {
                         "type": "string",
-                        "description": "the value to be committed"
-                    }
-                    
-
+                        "description": "the value to be committed",
+                    },
                 },
                 "required": ["file_name", "value"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     14: {
         "type": "function",
         "function": {
@@ -371,26 +334,23 @@ solvers_descriptions = {
                 "properties": {
                     "existing_word": {
                         "type": "string",
-                        "description": "the word to be replaced"
+                        "description": "the word to be replaced",
                     },
                     "new_word": {
                         "type": "string",
-                        "description": "the word to be replaced with"
+                        "description": "the word to be replaced with",
                     },
                     "command": {
                         "type": "string",
-                        "description": "the command to be run"
-                    }
-                    
-
+                        "description": "the command to be run",
+                    },
                 },
                 "required": ["existing_word", "new_word", "command"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     15: {
         "type": "function",
         "function": {
@@ -401,22 +361,19 @@ solvers_descriptions = {
                 "properties": {
                     "file_size_number": {
                         "type": "string",
-                        "description": "the minimum file size"
+                        "description": "the minimum file size",
                     },
                     "date_string": {
                         "type": "string",
-                        "description": "the date string in the format %a, %d %b, %Y, %I:%M %p %Z"
-                    }
-                    
-
+                        "description": "the date string in the format %a, %d %b, %Y, %I:%M %p %Z",
+                    },
                 },
                 "required": ["file_size_number", "date_string"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     16: {
         "type": "function",
         "function": {
@@ -427,18 +384,15 @@ solvers_descriptions = {
                 "properties": {
                     "command": {
                         "type": "string",
-                        "description": "the command to be run"
+                        "description": "the command to be run",
                     }
-                    
-
                 },
                 "required": ["command"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     17: {
         "type": "function",
         "function": {
@@ -449,22 +403,19 @@ solvers_descriptions = {
                 "properties": {
                     "file_1": {
                         "type": "string",
-                        "description": "the name of the first file"
+                        "description": "the name of the first file",
                     },
                     "file_2": {
                         "type": "string",
-                        "description": "the name of the second file"
-                    }
-                    
-
+                        "description": "the name of the second file",
+                    },
                 },
                 "required": ["file_1", "file_2"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     18: {
         "type": "function",
         "function": {
@@ -475,18 +426,15 @@ solvers_descriptions = {
                 "properties": {
                     "ticket_type": {
                         "type": "string",
-                        "description": "the string containing the type of ticket"
+                        "description": "the string containing the type of ticket",
                     }
-                    
-
                 },
                 "required": ["ticket_type"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     19: {
         "type": "function",
         "function": {
@@ -494,16 +442,13 @@ solvers_descriptions = {
             "description": "Writes documentation in Markdown for an imaginary analysis of the number of steps you walked each day for a week, comparing over time and with friends.",
             "parameters": {
                 "type": "object",
-                "properties": {
-            
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     20: {
         "type": "function",
         "function": {
@@ -511,16 +456,13 @@ solvers_descriptions = {
             "description": "Compresses the image losslessly to an image that is less than 1,500 bytes",
             "parameters": {
                 "type": "object",
-                "properties": {
-            
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     21: {
         "type": "function",
         "function": {
@@ -529,21 +471,14 @@ solvers_descriptions = {
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "email_id": {
-                        "type": "string",
-                        "description": "the email ID"
-                    }
-                    
-
+                    "email_id": {"type": "string", "description": "the email ID"}
                 },
                 "required": ["email_id"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
-
     22: {
         "type": "function",
         "function": {
@@ -552,19 +487,14 @@ solvers_descriptions = {
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "email_id": {
-                        "type": "string",
-                        "description": "the email ID"
-                    },
-
+                    "email_id": {"type": "string", "description": "the email ID"},
                 },
                 "required": ["email_id"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     23: {
         "type": "function",
         "function": {
@@ -575,17 +505,15 @@ solvers_descriptions = {
                 "properties": {
                     "lightness_threshold": {
                         "type": "number",
-                        "description": "the minimum brightness as described in the python code snippet"
+                        "description": "the minimum brightness as described in the python code snippet",
                     }
-            
                 },
                 "required": ["lightness_threshold"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     24: {
         "type": "function",
         "function": {
@@ -593,16 +521,13 @@ solvers_descriptions = {
             "description": "Calculates the average marks of all students in the class and deploy in vercel",
             "parameters": {
                 "type": "object",
-                "properties": {
-            
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     25: {
         "type": "function",
         "function": {
@@ -611,20 +536,14 @@ solvers_descriptions = {
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "email": {
-                        "type": "string",
-                        "description": "the email ID"
-                    }
-                    
-
+                    "email": {"type": "string", "description": "the email ID"}
                 },
                 "required": ["email"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     26: {
         "type": "function",
         "function": {
@@ -633,20 +552,14 @@ solvers_descriptions = {
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "tag": {
-                        "type": "string",
-                        "description": "the tag to be added"
-                    }
-                    
-
+                    "tag": {"type": "string", "description": "the tag to be added"}
                 },
                 "required": ["tag"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     27: {
         "type": "function",
         "function": {
@@ -654,16 +567,13 @@ solvers_descriptions = {
             "description": "Creates a fastapi server and returns the url endpoint",
             "parameters": {
                 "type": "object",
-                "properties": {
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
-
     28: {
         "type": "function",
         "function": {
@@ -671,15 +581,13 @@ solvers_descriptions = {
             "description": "Creates a tunnel to the Llamafile server using ngrok",
             "parameters": {
                 "type": "object",
-                "properties": {
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     29: {
         "type": "function",
         "function": {
@@ -688,24 +596,18 @@ solvers_descriptions = {
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "model_name": {
-                        "type": "string",
-                        "description": "the model name"
-                    },
+                    "model_name": {"type": "string", "description": "the model name"},
                     "meaningless_text": {
                         "type": "string",
-                        "description": "the meaningless text"
-                    }
-                    
-
+                        "description": "the meaningless text",
+                    },
                 },
                 "required": ["model_name", "meaningless_text"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     30: {
         "type": "function",
         "function": {
@@ -716,18 +618,15 @@ solvers_descriptions = {
                 "properties": {
                     "user_message": {
                         "type": "string",
-                        "description": "the user message given in the prompt for which the input tokens are to be calculated. It is the paragrapth after the sentence - 'Specifically, when you make a request to OpenAI's GPT-4o-Mini with just this user message:' in the prompt and before the sentence: '... how many input tokens does it use up?' in the prompt"
+                        "description": "the user message given in the prompt for which the input tokens are to be calculated. It is the paragrapth after the sentence - 'Specifically, when you make a request to OpenAI's GPT-4o-Mini with just this user message:' in the prompt and before the sentence: '... how many input tokens does it use up?' in the prompt",
                     }
-                    
-
                 },
                 "required": ["user_message"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     31: {
         "type": "function",
         "function": {
@@ -737,40 +636,42 @@ solvers_descriptions = {
                 "type": "object",
                 "properties": {
                     "required_fields": {
-                    "type": "array",
-                    "description": "Array of the required fields",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                        "field_name": {
-                            "type": "string",
-                            "description": "Name of the field"
+                        "type": "array",
+                        "description": "Array of the required fields",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "field_name": {
+                                    "type": "string",
+                                    "description": "Name of the field",
+                                },
+                                "field_type": {
+                                    "type": "string",
+                                    "description": "Type of the field",
+                                    "enum": [
+                                        "string",
+                                        "number",
+                                        "boolean",
+                                        "date",
+                                        "object",
+                                    ],
+                                },
+                            },
+                            "required": ["field_name", "field_type"],
+                            "additionalProperties": False,
                         },
-                        "field_type": {
-                            "type": "string",
-                            "description": "Type of the field",
-                            "enum": ["string", "number", "boolean", "date", "object"]
-                        }
-                        },
-                        "required": ["field_name", "field_type"],
-                        "additionalProperties": False
-                    }
                     },
-              
                     "additionalPropertiesBoolean": {
                         "type": "boolean",
-                        "description": "the boolean value for additional properties"
-                    }
-                    
-
+                        "description": "the boolean value for additional properties",
+                    },
                 },
                 "required": ["required_fields", "additionalPropertiesBoolean"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     32: {
         "type": "function",
         "function": {
@@ -778,15 +679,13 @@ solvers_descriptions = {
             "description": "Extracts the required details as per the {text_instruction} from an image passed as base64 image to openai's API",
             "parameters": {
                 "type": "object",
-                "properties": {
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     33: {
         "type": "function",
         "function": {
@@ -797,21 +696,19 @@ solvers_descriptions = {
                 "properties": {
                     "verification_message_1": {
                         "type": "string",
-                        "description": "the first verification message"
+                        "description": "the first verification message",
                     },
                     "verification_message_2": {
                         "type": "string",
-                        "description": "the second verification message"
-                    }
-                    
+                        "description": "the second verification message",
+                    },
                 },
                 "required": ["verification_message_1", "verification_message_2"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     34: {
         "type": "function",
         "function": {
@@ -819,16 +716,13 @@ solvers_descriptions = {
             "description": "Creates a Python function most_similar(embeddings) that will calculate the cosine similarity between each pair of these embeddings and return the pair that has the highest similarity.",
             "parameters": {
                 "type": "object",
-                "properties": {
-
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     35: {
         "type": "function",
         "function": {
@@ -836,16 +730,13 @@ solvers_descriptions = {
             "description": "Calculates the cosine similarity between the query embedding and each document embedding.",
             "parameters": {
                 "type": "object",
-                "properties": {
-                    
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     36: {
         "type": "function",
         "function": {
@@ -853,16 +744,13 @@ solvers_descriptions = {
             "description": "Implements function calling for the given functions",
             "parameters": {
                 "type": "object",
-                "properties": {
-                    
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     37: {
         "type": "function",
         "function": {
@@ -871,19 +759,14 @@ solvers_descriptions = {
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "page_number": {
-                        "type": "string",
-                        "description": "the page number"
-                    }
-                    
+                    "page_number": {"type": "string", "description": "the page number"}
                 },
                 "required": ["page_number"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     38: {
         "type": "function",
         "function": {
@@ -894,22 +777,16 @@ solvers_descriptions = {
                 "properties": {
                     "ratings_start": {
                         "type": "string",
-                        "description": "the start rating"
+                        "description": "the start rating",
                     },
-                    "ratings_end": {
-                        "type": "string",
-                        "description": "the end rating"
-                    }
-
-                    
+                    "ratings_end": {"type": "string", "description": "the end rating"},
                 },
                 "required": ["ratings_start", "ratings_end"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     39: {
         "type": "function",
         "function": {
@@ -917,16 +794,13 @@ solvers_descriptions = {
             "description": "Scrape the wikipedia page for a given country, write all the headings <h1>, <h2>, ...., <h6> in a markdown file. Generate a Markdown-formatted outline that reflects the hierarchical structure of the content.",
             "parameters": {
                 "type": "object",
-                "properties": {
- 
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     40: {
         "type": "function",
         "function": {
@@ -937,17 +811,15 @@ solvers_descriptions = {
                 "properties": {
                     "required_city": {
                         "type": "string",
-                        "description": "the city for which the weather forecast is required"
+                        "description": "the city for which the weather forecast is required",
                     }
-                    
                 },
                 "required": ["required_city"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     41: {
         "type": "function",
         "function": {
@@ -958,25 +830,20 @@ solvers_descriptions = {
                 "properties": {
                     "maximum_or_minimum": {
                         "type": "string",
-                        "description": "either 'maximum' or 'minimum' string as per the prompt"
+                        "description": "either 'maximum' or 'minimum' string as per the prompt",
                     },
-                    "city_name": {
-                        "type": "string",
-                        "description": "the city name"
-                    },
+                    "city_name": {"type": "string", "description": "the city name"},
                     "country_name": {
                         "type": "string",
-                        "description": "the country name"
-                    }
-                    
+                        "description": "the country name",
+                    },
                 },
                 "required": ["maximum_or_minimum", "city_name", "country_name"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     42: {
         "type": "function",
         "function": {
@@ -987,21 +854,19 @@ solvers_descriptions = {
                 "properties": {
                     "mentioning_word": {
                         "type": "string",
-                        "description": "the word mentioned in the post"
+                        "description": "the word mentioned in the post",
                     },
                     "minimum_points": {
                         "type": "number",
-                        "description": "the minimum points"
-                    }
-                    
+                        "description": "the minimum points",
+                    },
                 },
                 "required": ["mentioning_word", "minimum_points"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     43: {
         "type": "function",
         "function": {
@@ -1010,23 +875,18 @@ solvers_descriptions = {
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "city_name": {
-                        "type": "string",
-                        "description": "the city name"
-                    },
+                    "city_name": {"type": "string", "description": "the city name"},
                     "followers_count": {
                         "type": "number",
-                        "description": "the followers count"
-                    }
-                    
+                        "description": "the followers count",
+                    },
                 },
                 "required": ["city_name", "followers_count"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     44: {
         "type": "function",
         "function": {
@@ -1035,19 +895,14 @@ solvers_descriptions = {
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "email": {
-                        "type": "string",
-                        "description": "the email ID"
-                    }
-                    
+                    "email": {"type": "string", "description": "the email ID"}
                 },
                 "required": ["email"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     45: {
         "type": "function",
         "function": {
@@ -1058,33 +913,37 @@ solvers_descriptions = {
                 "properties": {
                     "subject_whose_marks_to_be_calculated": {
                         "type": "string",
-                        "description": "the subject whose total marks are to be calculated"
+                        "description": "the subject whose total marks are to be calculated",
                     },
                     "marks_in_criterion_subject": {
                         "type": "number",
-                        "description": "the marks in the criterion subject"
+                        "description": "the marks in the criterion subject",
                     },
                     "criterion_subject": {
                         "type": "string",
-                        "description": "the criterion subject, that is the subject name in the codition"
+                        "description": "the criterion subject, that is the subject name in the codition",
                     },
                     "group_start_number": {
                         "type": "number",
-                        "description": "the start group number, that is the starting group number in the condition"
+                        "description": "the start group number, that is the starting group number in the condition",
                     },
                     "group_end_number": {
                         "type": "number",
-                        "description": "the end group number, that is the ending group number in the condition"
-                    }
-                    
+                        "description": "the end group number, that is the ending group number in the condition",
+                    },
                 },
-                "required": ["subject_whose_marks_to_be_calculated", "marks_in_criterion_subject", "criterion_subject", "group_start_number", "group_end_number"],
-                "additionalProperties": False
+                "required": [
+                    "subject_whose_marks_to_be_calculated",
+                    "marks_in_criterion_subject",
+                    "criterion_subject",
+                    "group_start_number",
+                    "group_end_number",
+                ],
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     46: {
         "type": "function",
         "function": {
@@ -1092,16 +951,13 @@ solvers_descriptions = {
             "description": "Convert a pdf to a markdown file",
             "parameters": {
                 "type": "object",
-                "properties": {
-
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     47: {
         "type": "function",
         "function": {
@@ -1112,25 +968,23 @@ solvers_descriptions = {
                 "properties": {
                     "date_string": {
                         "type": "string",
-                        "description": "the date string in the format '%a %b %d %Y %H:%M:%S GMT%z'"
+                        "description": "the date string in the format '%a %b %d %Y %H:%M:%S GMT%z'",
                     },
                     "product_name": {
                         "type": "string",
-                        "description": "the product name"
+                        "description": "the product name",
                     },
                     "country": {
                         "type": "string",
-                        "description": "the country name code"
-                    }
-
+                        "description": "the country name code",
+                    },
                 },
                 "required": ["date_string", "product_name", "country"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     48: {
         "type": "function",
         "function": {
@@ -1138,16 +992,13 @@ solvers_descriptions = {
             "description": "Finds the number of unique students are there in the file",
             "parameters": {
                 "type": "object",
-                "properties": {
-
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     49: {
         "type": "function",
         "function": {
@@ -1158,29 +1009,21 @@ solvers_descriptions = {
                 "properties": {
                     "url_prefix": {
                         "type": "string",
-                        "description": "the URL prefix, in the format '/url_prefix/' "
+                        "description": "the URL prefix, in the format '/url_prefix/' ",
                     },
-                    "start_hour": {
-                        "type": "number",
-                        "description": "the start hour"
-                    },
-                    "end_hour": {
-                        "type": "number",
-                        "description": "the end hour"
-                    },
+                    "start_hour": {"type": "number", "description": "the start hour"},
+                    "end_hour": {"type": "number", "description": "the end hour"},
                     "day_of_week": {
                         "type": "number",
-                        "description": "the day of the week in number, Monday is 0, Tuesday is 1, Wednesday is 2, Thursday is 3, Friday is 4, Saturday is 5, Sunday is 6"
-                    }
-
+                        "description": "the day of the week in number, Monday is 0, Tuesday is 1, Wednesday is 2, Thursday is 3, Friday is 4, Saturday is 5, Sunday is 6",
+                    },
                 },
                 "required": ["url_prefix", "start_hour", "end_hour", "day_of_week"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     50: {
         "type": "function",
         "function": {
@@ -1191,21 +1034,19 @@ solvers_descriptions = {
                 "properties": {
                     "section": {
                         "type": "string",
-                        "description": "the section name, in the format '/section/' "
+                        "description": "the section name, in the format '/section/' ",
                     },
                     "date_string": {
                         "type": "string",
-                        "description": "the date string in the format 'YYYY-MM-DD'"
-                    }
-
+                        "description": "the date string in the format 'YYYY-MM-DD'",
+                    },
                 },
                 "required": ["section", "date_string"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     51: {
         "type": "function",
         "function": {
@@ -1216,24 +1057,24 @@ solvers_descriptions = {
                 "properties": {
                     "product_sold": {
                         "type": "string",
-                        "description": "the product sold"
+                        "description": "the product sold",
                     },
-                    "city_name": {
-                        "type": "string",
-                        "description": "the city name"
-                    },
+                    "city_name": {"type": "string", "description": "the city name"},
                     "no_of_products_sold_atleast": {
                         "type": "number",
-                        "description": "the number of products sold atleast"
-                    }
+                        "description": "the number of products sold atleast",
+                    },
                 },
-                "required": ["product_sold", "city_name", "no_of_products_sold_atleast"],
-                "additionalProperties": False
+                "required": [
+                    "product_sold",
+                    "city_name",
+                    "no_of_products_sold_atleast",
+                ],
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     52: {
         "type": "function",
         "function": {
@@ -1241,16 +1082,13 @@ solvers_descriptions = {
             "description": "Finds the total sales value",
             "parameters": {
                 "type": "object",
-                "properties": {
-
-                },
+                "properties": {},
                 "required": [],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     53: {
         "type": "function",
         "function": {
@@ -1259,19 +1097,14 @@ solvers_descriptions = {
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "target_key": {
-                        "type": "string",
-                        "description": "the target key"
-                    }
-
+                    "target_key": {"type": "string", "description": "the target key"}
                 },
                 "required": ["target_key"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     54: {
         "type": "function",
         "function": {
@@ -1282,21 +1115,19 @@ solvers_descriptions = {
                 "properties": {
                     "date_time_string": {
                         "type": "string",
-                        "description": "the date time string in the ISO 8601 format"
+                        "description": "the date time string in the ISO 8601 format",
                     },
                     "no_of_useful_stars": {
                         "type": "number",
-                        "description": "the number of useful stars"
-                    }
-
+                        "description": "the number of useful stars",
+                    },
                 },
                 "required": ["date_time_string", "no_of_useful_stars"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
+            "strict": True,
+        },
     },
-
     55: {
         "type": "function",
         "function": {
@@ -1307,53 +1138,31 @@ solvers_descriptions = {
                 "properties": {
                     "start_time": {
                         "type": "number",
-                        "description": "the starting timestamp"
+                        "description": "the starting timestamp",
                     },
                     "end_time": {
                         "type": "number",
-                        "description": "the ending timestamp"
-                    }
-
+                        "description": "the ending timestamp",
+                    },
                 },
                 "required": ["start_time", "end_time"],
-                "additionalProperties": False
+                "additionalProperties": False,
             },
-            "strict": True
-        }
-    },
-
-    56: {
-    "type": "function",
-    "function": {
-        "name": "solver_56",
-        "description": "Reconstruct the image by moving the pieces from the scrambled position to the original position as per the given {mappings}",
-        "parameters": {
-            "type": "object",
-            "properties": {
-
-            },
-            "required": [],
-            "additionalProperties": False
+            "strict": True,
         },
-        "strict": True
-    }
-}
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
+    },
+    56: {
+        "type": "function",
+        "function": {
+            "name": "solver_56",
+            "description": "Reconstruct the image by moving the pieces from the scrambled position to the original position as per the given {mappings}",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": False,
+            },
+            "strict": True,
+        },
+    },
 }

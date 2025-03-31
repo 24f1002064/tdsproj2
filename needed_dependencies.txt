@@ -1,5 +1,0 @@
-nodejs, npx
-beautifulsoup4
-git cli
-zipfile
-tempfile
